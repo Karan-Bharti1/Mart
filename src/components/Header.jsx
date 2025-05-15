@@ -1,22 +1,19 @@
+import { Link } from "react-router-dom"
+
 const Header=()=>{
     return(<>
 <header >
 
     <div className="container ">
-        <h2 className="text-danger mt-3 brand"> Mart </h2>
+        <h2 className="text-danger  mt-3 brand"> Mart </h2>
     <ul className="nav d-flex justify-content-end">
   <li className="nav-item">
-    <a className="nav-link active" aria-current="page" href="#">Active</a>
+  <Link className="nav-link"to={"/products"}>Products</Link>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="#">Link</a>
+    <Link className="nav-link"to={"/cart"}>Cart</Link>
   </li>
-  <li className="nav-item">
-    <a className="nav-link" href="#">Link</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-  </li>
+ 
 </ul>
     </div>
 </header>
