@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Cart=()=>{
     const {productsData}=useCartContext()
     const itemsInCart=productsData.filter(item=>item.isInCart)
-    console.log(itemsInCart)
+    
     const subtotal=itemsInCart.reduce((acc,curr)=>acc+curr.price,0).toFixed(2)
     const displayItemsInCart=itemsInCart.map(item=>(
         <div className="col-md-6 my-2" key={item.id}>
@@ -12,7 +12,7 @@ const Cart=()=>{
         <div className="row">
            
             <div className="col-md-4">
-                <img src={item.imageURL} className="img-fluid cart-image"/>
+                <img src={item.imageURL} className="cart-image"/>
                 </div>
                 <div className="col-md-8">
                     <p className="fs-4 fw-bold text-danger">{item.name}</p>
@@ -34,7 +34,7 @@ const Cart=()=>{
 <Header/>
 <main className="container">
     <hr/>
-<h2 className='text-center'> Cart</h2>
+
 <main className="container">
           {itemsInCart.length>0 && ( <>
           <h2 className="text-center py-2">Your Cart</h2>
