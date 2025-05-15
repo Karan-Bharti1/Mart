@@ -5,8 +5,10 @@ const CartContext=createContext()
 export const useCartContext=()=>useContext(CartContext)
 export const CartContextProvider=({children})=>{
     const [productsData,setProductsData]=useState(products)
-   
-    return(<CartContext.Provider value={{productsData}}>
+   const addToCart=(id)=>{
+    setProductsData(prev=>prev.map(product=>product.id===id?{...product,isInCart:!product.isInCart}:product))
+   }
+    return(<CartContext.Provider value={{productsData,addToCart}}>
         {children}
     </CartContext.Provider>)
 }

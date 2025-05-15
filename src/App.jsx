@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/Header';
 import { useCartContext } from './contexts/CartContext';
 function ProductListing() {
-const {productsData}=useCartContext()
+const {productsData,addToCart}=useCartContext()
 
   return (
     <>
@@ -20,7 +20,7 @@ const {productsData}=useCartContext()
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{product.name}</h5>
         <p className="card-text">$ {product.price}</p>
-        <button className='btn btn-danger mt-auto'>Add To Cart</button>
+        <button className='btn btn-danger mt-auto' onClick={()=>addToCart(product.id)}>{product.isInCart?"Remove from Cart": "Add to Cart"}</button>
       </div>
     </div>
       </div>))}
