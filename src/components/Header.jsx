@@ -6,12 +6,12 @@ const Header=()=>{
 
     <div className="container ">
         <h2 className="text-danger  mt-3 brand"> Mart </h2>
-    <ul className="nav d-flex justify-content-end">
+    <ul className="nav justify-content-end">
   <li className="nav-item">
-  <Link className="nav-link"to={"/products"}>Products</Link>
+  <Link className="nav-link" to={"/"}>Products</Link>
   </li>
   <li className="nav-item">
-    <Link className="nav-link"to={"/cart"}>Cart</Link>
+    <Link className="nav-link" to={"/cart"}>Cart</Link>
   </li>
  
 </ul>
